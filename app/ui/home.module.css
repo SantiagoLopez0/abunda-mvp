@@ -1,0 +1,11 @@
+.heroWrapper{
+    box-sizing:border-box;
+    display: flex;
+    opacity:1;
+    position:relative;
+    background-image: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(5,45,35,1) 80%), url('/home-hero.jpg');
+    /* background-attachment: fixed; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

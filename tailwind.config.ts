@@ -11,6 +11,12 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        green1: '#052D23',
+        green2: '#1A3B25',
+        lime: '#E6FF55',
+        wpGreen: '#EAFBDF',
+        beige: '#FAF5ED',
+        brown: '#D7CDC3',
       },
     },
   },

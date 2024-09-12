@@ -1,101 +1,70 @@
-import Image from "next/image";
+import Header from "@/app/ui/header";
+import styles from '@/app/ui/home.module.css';
+import { Quicksand } from "next/font/google";
+
+import Image from 'next/image';
+import Link from 'next/link';
+
+const quicksand = Quicksand({ subsets: ['latin'], weight: ['400', '600', '700'], });
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <>
+    <Header />
+    <main className="flex flex-col">
+      <section className="px-[24px] md:px-[64px]">
+        <div className={`p-[64px] w-[auto] rounded-[64px] md:h-[840px] h-dvh ${styles.heroWrapper} flex justify-between`}>
+          <div className="p-0 xl:p-[64px] h-[100%] flex flex-col gap-8 justify-center xl:justify-between items-start max-w-[515px] xl:max-w-[650px]">
+            <h1 className={`${quicksand.className} text-white text-[42px] md:text-[64px] leading-tight`}><strong>Tu lugar <br />seguro</strong> para <br /> hablar de dinero <br /> y finanzas.</h1>
+            <p className="text-white text-[20px]">Tus necesidades económicas son únicas y merecen una atención personalizada, a la medida, sin costos ocultos ni laaargos cursos.</p>
+            <Link href='/' className='py-[16px] px-[24px] flex gap-[12px] justify-center items-center bg-lime rounded-full border-green1 border'>
+              <div className='max-w-[24px] max-h-[24px]'>
+                <Image
+                  alt='Abunda'
+                  src='/whatsapp.svg'
+                  width={1000}
+                  height={250}
+                  objectFit='contain'
+                />
+              </div>
+              <span className='font-semibold text-green2'>Unirme al test beta</span>
+            </Link>
+          </div>
+          <div className="pt-[200px] xl:pt-[50px] pb-[154px] xl:px-[64px] h-[100%] max-w-[460px] xl:max-w-[600px] hidden lg:flex items-end">
             <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              alt='Abunda chat'
+              src='/heroChat.png'
+              width={1000}
+              height={250}
+              objectFit='contain'
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+      <section className="px-[24px] md:px-[64px]">
+        <div className="container mx-auto py-[256px] flex flex-col justify-center items-center gap-[32px]">
+          <h2
+            className={`${quicksand.className} text-green1 text-[42px] md:text-[64px] leading-tight text-center`}
+          >
+            Hablemos de dinero<br /><strong>sin tabúes.</strong>
+          </h2>
+          <Link href='/' className='py-[16px] px-[24px] flex gap-[12px] justify-center items-center bg-lime rounded-full border-green1 border'>
+            <div className='max-w-[24px] max-h-[24px]'>
+              <Image
+                alt='Abunda'
+                src='/whatsapp.svg'
+                width={1000}
+                height={250}
+                objectFit='contain'
+              />
+            </div>
+            <span className='font-semibold text-green2'>Unirme al test beta</span>
+          </Link>
+        </div>
+      </section>
+    </main>
+    <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
+    </footer>
+    </>
   );
 }

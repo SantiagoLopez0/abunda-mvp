@@ -4,15 +4,23 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1a1a1a;
+  /* --black: #000;
+  --white: #fff;
+  --green1: #052D23;
+  --green2: #1A3B25;
+  --lime: #E6FF55;
+  --wpGreen: #EAFBDF;
+  --beige: #FAF5ED;
+  --brown: #D7CDC3; */
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #1a1a1a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   color: var(--foreground);
@@ -24,4 +32,8 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.container{
+  max-width: 1440px;
 }
